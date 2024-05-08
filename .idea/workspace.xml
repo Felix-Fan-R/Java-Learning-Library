@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f419da3-96c7-406c-84a4-380065160407" name="更改" comment="24.04.22">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="2f419da3-96c7-406c-84a4-380065160407" name="更改" comment="24.05.06">
+      <change afterPath="$PROJECT_DIR$/database.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/garbage.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Team6GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GarbageClassificationSystemGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GarbageClassificationSystemGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuessGUI/guessgui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuessGUI/guessgui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GarbageClassificationSystemGUI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,32 +40,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/xxlang/Desktop/java/Java-Learning-Library/javateamwork/untitled/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;应用程序.GarbageClassificationSystemGUI.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.GuessNumberGame.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.guessgui.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/xxlang/Desktop/java/Java-Learning-Library/javateamwork/untitled/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.GarbageClassificationSystemGUI.executor": "Run",
+    "应用程序.GuessNumberGame.executor": "Run",
+    "应用程序.guessgui.executor": "Run"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xxlang\Desktop\java\Java-Learning-Library\javateamwork\untitled\src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -81,7 +89,10 @@
       <workItem from="1714354104276" duration="3385000" />
       <workItem from="1714463506216" duration="1275000" />
       <workItem from="1714465049010" duration="1715000" />
-      <workItem from="1714963296322" duration="715000" />
+      <workItem from="1714963296322" duration="1655000" />
+      <workItem from="1714990769659" duration="624000" />
+      <workItem from="1715068194081" duration="3471000" />
+      <workItem from="1715151687542" duration="11295000" />
     </task>
     <task id="LOCAL-00001" summary="24.04.22">
       <option name="closed" value="true" />
@@ -99,14 +110,24 @@
       <option name="project" value="LOCAL" />
       <updated>1713863593529</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="24.05.06">
+      <option name="closed" value="true" />
+      <created>1714964327876</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714964327876</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="24.04.22" />
-    <option name="LAST_COMMIT_MESSAGE" value="24.04.22" />
+    <MESSAGE value="24.05.06" />
+    <option name="LAST_COMMIT_MESSAGE" value="24.05.06" />
   </component>
 </project>

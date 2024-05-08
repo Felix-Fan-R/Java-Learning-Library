@@ -1,79 +1,82 @@
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.*;
-
-// 用户类型枚举
-enum UserType {
-    ADMIN,
-    USER
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
+enum GarbageType {
+    可回收垃圾,
+    厨房垃圾,
+    有害垃圾,
+    医疗废物,
+    其他垃圾
 }
-
-// 用户类
-class User {
-    private String username;
-    private String password;
-    private UserType type;
-
-    public User(String username, String password, UserType type) {
-        this.username = username;
-        this.password = password;
+class Garbage {//垃圾
+    private final String name;
+    private final GarbageType type;
+    public Garbage(String name,GarbageType type) {
+        this.name = name;
         this.type = type;
     }
-
-}
-
-class Garbage {
-    private String name;
-    private String category;
-
-    public Garbage(String name, String category) {
-        this.name = name;
-        this.category = category;
+    public GarbageType getType() {
+        return type;
     }
-
     public String getName() {
         return name;
     }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     @Override
     public String toString() {
-        return "垃圾名称：" + name + "，垃圾分类：" + category;
+        return "垃圾名称：" + name + "，垃圾分类：" + type.name();
+    }
+    public String serialize() {
+        return name + ":" + type.name();
+    }
+    public static Garbage deserialize(String data) {
+        String[] parts = data.split(":");
+        if (parts.length == 2) {
+            return new Garbage(parts[0], GarbageType.valueOf(parts[1]));
+        }
+        return null;
     }
 }
+class GarbageManagement {//垃圾管理
+    private static final String GARBAGE_FILE = "garbage.txt";
+    private final Map<String, Garbage> garbageMap = new HashMap<>(); //
 
-class GarbageManagement {
-    private Map<String, Garbage> garbageMap;
-
-    // 系统管理类构造函数
     public GarbageManagement() {
-        this.garbageMap = new HashMap<>();
-        garbageMap.put("苹果核", new Garbage("苹果核", "有害垃圾"));
-        garbageMap.put("纸张", new Garbage("纸张", "可回收垃圾"));
-        garbageMap.put("菜叶", new Garbage("菜叶", "厨余垃圾"));
+        loadGarbageFromFile();
     }
-
-    public void addGarbage(String name, String category) {
-        garbageMap.put(name, new Garbage(name, category));
+    private void loadGarbageFromFile() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(GARBAGE_FILE))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                Garbage garbage = Garbage.deserialize(line);
+                if (garbage != null) {
+                    garbageMap.put(garbage.getName(), garbage);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
+    public void saveGarbageToFile() {
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(GARBAGE_FILE))) {
+            for (Garbage garbage : garbageMap.values()) {
+                writer.write(garbage.serialize());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public List<Garbage> getGarbageList() {
+        return new ArrayList<>(garbageMap.values());
+    }
+    public void addGarbage(String name, GarbageType type) {
+        Garbage garbage = new Garbage(name, type);
+        garbageMap.put(name, garbage);
+        saveGarbageToFile();
+    }
     public void deleteGarbage(String name) {
         garbageMap.remove(name);
-    }
-
-    public void updateGarbage(String name, String category) {
-        if (garbageMap.containsKey(name)) {
-            garbageMap.get(name).setCategory(category);
-        } else {
-            System.out.println("垃圾分类信息不存在");
-        }
+        saveGarbageToFile();
     }
 
     public Garbage queryGarbage(String name) {
