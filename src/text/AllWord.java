@@ -5,10 +5,8 @@ import java.awt.*;
 
 public class AllWord {
     public static void main(String[] args) {
-        // 获取系统中所有可用字体
         String[] fontNames = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
 
-        // 创建一个窗口来显示所有字体名称
         JFrame frame = new JFrame("Available Fonts");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 400);

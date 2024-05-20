@@ -1,7 +1,7 @@
 public class Test {
     public static void main(String[] args) {
-        testUserGUI();
-
+        //testUserGUI();
+        testWelcomeGUI();
         /*testWelcomeGUI();
         testRegisterGUI();
         testAdminGUI();
@@ -12,38 +12,31 @@ public class Test {
     }
 
     private static void testWelcomeGUI() {
-        AllGUI gui = new AllGUI();
-        gui.showGUI();
+        AllGUI.showGUI();
     }
 
 
     private static void testRegisterGUI() {
-        AllGUI gui = new AllGUI();
-        gui.RegisterGUI();
+        AllGUI.RegisterGUI();
     }
 
     private static void testAdminGUI() {
-        AllGUI gui = new AllGUI();
-        gui.AdminGUI();
+        AllGUI.AdminGUI();
     }
 
     private static void testUserGUI() {
-        AllGUI gui = new AllGUI();
-        gui.UserGUI();
+        AllGUI.UserGUI();
     }
 
     private static void testAddGarbageGUI() {
-        AllGUI gui = new AllGUI();
-        gui.AddGarbageGUI();
+        AllGUI.AddGarbageGUI();
     }
 
     private static void testShowGarbage() {
-        AllGUI gui = new AllGUI();
-        gui.showGarbage();
+        AllGUI.showGarbage();
     }
 
     private static void testDeleteGUI() {
-        AllGUI gui = new AllGUI();
-        gui.DeleteGUI();
+        AllGUI.DeleteGUI();
     }
 }

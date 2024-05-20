@@ -9,40 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f419da3-96c7-406c-84a4-380065160407" name="更改" comment="24.05.14">
-      <change afterPath="$PROJECT_DIR$/img/1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AllGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Garbage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GarbageManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoginManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TeamMembers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/text/AllWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/untitled_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/untitled_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="2f419da3-96c7-406c-84a4-380065160407" name="更改" comment="24.05.18">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/core_3_5_3_javadoc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Team6GUI.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core-3.5.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javase-3.5.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Captcha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/garbage.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuessGUI/guessgui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Team6GUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AllGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AllGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/text/AllWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/text/AllWord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,6 +53,16 @@
         <option name="accountId" value="a2804513-8f27-4733-b398-04ad117082ad" />
         <option name="url" value="https://github.com/Felix-Fan-R/Java-Learning-Library.git" />
       </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\software\apache-maven-3.9.6-bin\apache-maven-3.9.6" />
+        <option name="localRepository" value="D:\software\apache-maven-3.9.6-bin\mavenRepository" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="D:\software\apache-maven-3.9.6-bin\apache-maven-3.9.6\conf\settings.xml" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectColorInfo">{
@@ -99,8 +96,9 @@
     &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;应用程序.AllWord.executor&quot;: &quot;Run&quot;,
     &quot;应用程序.GUI.executor&quot;: &quot;Run&quot;,
     &quot;应用程序.GarbageClassificationSystemGUI.executor&quot;: &quot;Run&quot;,
     &quot;应用程序.GuessNumberGame.executor&quot;: &quot;Run&quot;,
@@ -122,6 +120,7 @@
       <recent name="C:\Users\xxlang\Desktop\java\Java-Learning-Library\javateamwork\untitled\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xxlang\Desktop\java\Java-Learning-Library\javateamwork\untitled\lib" />
       <recent name="C:\Users\xxlang\Desktop\java\Java-Learning-Library\javateamwork\untitled\img" />
       <recent name="C:\Users\xxlang\Desktop\java\Java-Learning-Library\javateamwork\untitled\src" />
     </key>
@@ -176,7 +175,11 @@
       <workItem from="1715921156897" duration="3284000" />
       <workItem from="1715933024536" duration="8781000" />
       <workItem from="1716002926806" duration="16150000" />
-      <workItem from="1716031874458" duration="1459000" />
+      <workItem from="1716031874458" duration="2431000" />
+      <workItem from="1716126731899" duration="17213000" />
+      <workItem from="1716180023414" duration="1663000" />
+      <workItem from="1716191789240" duration="3671000" />
+      <workItem from="1716204509409" duration="4219000" />
     </task>
     <task id="LOCAL-00001" summary="24.04.22">
       <option name="closed" value="true" />
@@ -226,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715674505659</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="24.05.18">
+      <option name="closed" value="true" />
+      <created>1716033627956</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716033627956</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +248,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -249,18 +272,8 @@
     <MESSAGE value="24.05.06" />
     <MESSAGE value="24.05.08" />
     <MESSAGE value="24.05.14" />
-    <option name="LAST_COMMIT_MESSAGE" value="24.05.14" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/text/AllWord.java</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="24.05.18" />
+    <option name="LAST_COMMIT_MESSAGE" value="24.05.18" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

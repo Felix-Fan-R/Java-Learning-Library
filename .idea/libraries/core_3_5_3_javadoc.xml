@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="core-3.5.3-javadoc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/core-3.5.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

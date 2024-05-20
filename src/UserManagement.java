@@ -17,8 +17,8 @@ public class UserManagement {
         String sqlInsert = "INSERT INTO users (username, password) VALUES (?, ?)";
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
              PreparedStatement SQLCheck = conn.prepareStatement(sqlCheck);
-             PreparedStatement SQLInsert = conn.prepareStatement(sqlInsert)) {
-
+             PreparedStatement SQLInsert = conn.prepareStatement(sqlInsert))
+        {
             SQLCheck.setString(1, username);
             ResultSet rs = SQLCheck.executeQuery();
             rs.next();
@@ -30,23 +30,50 @@ public class UserManagement {
                 // 如果不存在相同的用户名，则插入新用户信息
                 SQLInsert.setString(1, username);
                 SQLInsert.setString(2, password);
-                int rowsAffected = SQLInsert.executeUpdate();
-                return rowsAffected > 0;
+                int tmp = SQLInsert.executeUpdate();
+                return tmp > 0;
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
     }
     static void forgotPassword() {
         JTextField usernameField = new JTextField();
-        Object[] message = {
-                "请输入您的用户名:", usernameField
-        };
+        Object[] message = {"请输入您的用户名:", usernameField};
         int option = JOptionPane.showConfirmDialog(null, message, "忘记密码", JOptionPane.OK_CANCEL_OPTION);
+
         if (option == JOptionPane.OK_OPTION) {
             String username = usernameField.getText();
-            String password = UserManagement.getPassword(username);
+            String captcha = Captcha.ImageGUI();
+            if (captcha != null) {
+                String TrueCaptcha = Captcha.getCaptcha();
+                if (captcha.equals(TrueCaptcha)) {
+                    String password = getPassword(username);
+                    if (password != null) {
+                        JOptionPane.showMessageDialog(null, "您的密码是：" + password, "密码找回成功", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "未找到对应用户名的密码，请重试！", "密码找回失败", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "验证码错误，请重试！", "验证码错误", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "操作已取消", "提示", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }
+
+
+    /*static void forgotPassword() {
+        JTextField usernameField = new JTextField();
+        Object[] message = {"请输入您的用户名:", usernameField};
+        ImageIcon icon = new ImageIcon("img/1.jpeg");
+        int option = JOptionPane.showConfirmDialog(null, icon, "忘记密码", JOptionPane.OK_CANCEL_OPTION);
+        if (option == JOptionPane.OK_OPTION) {
+            String username = usernameField.getText();
+            String password = getPassword(username);
             if (password != null) {
                 JOptionPane.showMessageDialog(null, "您的密码是：" + password, "密码找回成功", JOptionPane.INFORMATION_MESSAGE);
             } else {
@@ -54,12 +81,12 @@ public class UserManagement {
             }
         }
     }
-
+*/
 
     static String getPassword(String username) {
         String sql = "SELECT password FROM users WHERE username = ?";
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
-             PreparedStatement SQL = conn.prepareStatement(sql)) {
+            PreparedStatement SQL = conn.prepareStatement(sql)) {
             SQL.setString(1, username);
             ResultSet rs = SQL.executeQuery();
             if (rs.next()) {

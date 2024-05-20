@@ -1,8 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
 import java.util.List;
-
+import java.util.Random;
 
 public class AllGUI {
     static void showGUI() {
@@ -218,17 +219,21 @@ public class AllGUI {
         JButton overviewButton = new JButton("总览");
         JButton searchByTypeButton = new JButton("按类型查找");
 
-
         JPanel panel = new Utility.JPanelWithBackground("C:/Users/xxlang/Desktop/java/Java-Learning-Library/javateamwork/untitled/img/1.jpeg");
 
-        overviewButton.setBounds(10, 160, 80, 25);
-        nameLabel.setBounds(10, 20, 80, 25);
-        nameText.setBounds(100, 20, 165, 25);
-        queryButton.setBounds(10, 50, 200, 25);
+        overviewButton.setBounds(100, 180, 80, 25);
+        nameLabel.setBounds(20, 30, 80, 25);
+        nameLabel.setFont(new Font("仿宋", Font.BOLD, 16));
+        nameText.setBounds(120, 30, 165, 25);
+        queryButton.setBounds(280, 30, 80, 25);
+        queryButton.setFont(new Font("仿宋", Font.BOLD, 18));
+        searchByTypeButton.setBounds(90, 80, 200, 30);
+        searchByTypeButton.setFont(new Font("仿宋", Font.BOLD, 18));
         userFrame.setSize(400, 300);
-        promoteButton.setBounds(10, 80, 200, 25);
-        logoutButton.setBounds(10, 120, 80, 25);
-        searchByTypeButton.setBounds(10, 200, 120, 25);
+        promoteButton.setBounds(90, 130, 200, 25);
+        promoteButton.setFont(new Font("仿宋", Font.BOLD, 18));
+        logoutButton.setBounds(190, 180, 80, 25);
+
         Utility.makeButton(searchByTypeButton);
         Utility.makeButton(queryButton);
         Utility.makeButton(promoteButton);
@@ -279,15 +284,29 @@ public class AllGUI {
                 JOptionPane.showMessageDialog(null, "未找到与\"" + searchText + "\"相关的垃圾分类信息", "错误", JOptionPane.ERROR_MESSAGE);
             }
         });
-
         promoteButton.addActionListener(e -> {
-            Garbage garbage = GarbageManagement.queryGarbage(nameText.getText());
-            if (garbage != null) {
-                JOptionPane.showMessageDialog(null, "请把垃圾投放到：" + garbage.getType().name(), "宣传信息", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "未找到该垃圾分类信息", "错误", JOptionPane.ERROR_MESSAGE);
+        List<Garbage> garbageList = GarbageManagement.getAllGarbage();
+        if (!garbageList.isEmpty()) {
+            Random random = new Random();
+            Garbage randomGarbage = garbageList.get(random.nextInt(garbageList.size()));
+            String qrContent = "每日垃圾小知识：" + randomGarbage.getName() + "是"+randomGarbage.getType()+"哦";
+            BufferedImage qrImage = Utility.generateQRCodeImage(qrContent);
+            if (qrImage != null) {
+                JLabel qrLabel = new JLabel(new ImageIcon(qrImage));
+                JOptionPane.showMessageDialog(null, qrLabel, "宣传信息", JOptionPane.INFORMATION_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "数据库中没有垃圾信息", "错误", JOptionPane.ERROR_MESSAGE);
+        }
         });
+//        promoteButton.addActionListener(e -> {
+//            Garbage garbage = GarbageManagement.queryGarbage(nameText.getText());
+//            if (garbage != null) {
+//                JOptionPane.showMessageDialog(null, "请把垃圾投放到：" + garbage.getType().name(), "宣传信息", JOptionPane.INFORMATION_MESSAGE);
+//            } else {
+//                JOptionPane.showMessageDialog(null, "未找到该垃圾分类信息", "错误", JOptionPane.ERROR_MESSAGE);
+//            }
+//        });
 
         userFrame.add(panel);
         panel.setLayout(null);
