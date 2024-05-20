@@ -10,18 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f419da3-96c7-406c-84a4-380065160407" name="更改" comment="24.05.18">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/core_3_5_3_javadoc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Team6GUI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core-3.5.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javase-3.5.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Captcha.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/QRcodeimage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AllGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AllGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GarbageManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GarbageManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/text/AllWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/text/AllWord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,45 +71,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/xxlang/Desktop/java/Java-Learning-Library/javateamwork/untitled&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/xxlang/Desktop/java/Java-Learning-Library/javateamwork/untitled/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;应用程序.AllWord.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.GUI.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.GarbageClassificationSystemGUI.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.GuessNumberGame.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.ListAllFonts.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.Main.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.Team6GUI.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.TeamMembersPage.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.Test.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.guessgui.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/xxlang/Desktop/java/Java-Learning-Library/javateamwork/untitled",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/xxlang/Desktop/java/Java-Learning-Library/javateamwork/untitled/src/Main.java",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.AllWord.executor": "Run",
+    "应用程序.GUI.executor": "Run",
+    "应用程序.GarbageClassificationSystemGUI.executor": "Run",
+    "应用程序.GuessNumberGame.executor": "Run",
+    "应用程序.ListAllFonts.executor": "Run",
+    "应用程序.Main.executor": "Run",
+    "应用程序.Team6GUI.executor": "Run",
+    "应用程序.TeamMembersPage.executor": "Run",
+    "应用程序.Test.executor": "Run",
+    "应用程序.guessgui.executor": "Run"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\xxlang\Desktop\java\Java-Learning-Library\javateamwork\untitled\lib" />
@@ -179,7 +174,9 @@
       <workItem from="1716126731899" duration="17213000" />
       <workItem from="1716180023414" duration="1663000" />
       <workItem from="1716191789240" duration="3671000" />
-      <workItem from="1716204509409" duration="4219000" />
+      <workItem from="1716204509409" duration="5090000" />
+      <workItem from="1716277814413" duration="2297000" />
+      <workItem from="1716426856951" duration="3565000" />
     </task>
     <task id="LOCAL-00001" summary="24.04.22">
       <option name="closed" value="true" />
@@ -237,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716033627956</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="24.05.18">
+      <option name="closed" value="true" />
+      <created>1716209060486</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716209060486</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

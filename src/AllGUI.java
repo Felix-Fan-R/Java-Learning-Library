@@ -97,13 +97,13 @@ public class AllGUI {
             String username = usernameText.getText();
             String password = new String(passwordText.getPassword());
             if (isAdminLogin) {
-                if (LoginManager.adminLogin(username, password)) {
+                if (Utility.adminLogin(username, password)) {
                     AdminGUI();
                 } else {
                     JOptionPane.showMessageDialog(null, "用户名或密码错误", "登录失败", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                if (LoginManager.userLogin(username, password)) {
+                if (Utility.userLogin(username, password)) {
                     UserGUI();
                 } else {
                     JOptionPane.showMessageDialog(null, "用户名或密码错误", "登录失败", JOptionPane.ERROR_MESSAGE);
@@ -290,7 +290,7 @@ public class AllGUI {
             Random random = new Random();
             Garbage randomGarbage = garbageList.get(random.nextInt(garbageList.size()));
             String qrContent = "每日垃圾小知识：" + randomGarbage.getName() + "是"+randomGarbage.getType()+"哦";
-            BufferedImage qrImage = Utility.generateQRCodeImage(qrContent);
+            BufferedImage qrImage = QRcodeimage.QRCodeImage(qrContent);
             if (qrImage != null) {
                 JLabel qrLabel = new JLabel(new ImageIcon(qrImage));
                 JOptionPane.showMessageDialog(null, qrLabel, "宣传信息", JOptionPane.INFORMATION_MESSAGE);

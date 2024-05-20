@@ -1,18 +1,14 @@
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.WriterException;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
-import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.QRCodeWriter;
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.HashMap;
-import java.util.Map;
+import java.sql.*;
 
 public class Utility {
+
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Team6GUI";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "Yt011017";
+    private static final String ADMIN_USERNAME = "admin";
+    private static final String ADMIN_PASSWORD = "admin";
     public static void makeButton(JButton button) {
         button.setForeground(Color.WHITE);
         button.setOpaque(false);
@@ -32,27 +28,33 @@ public class Utility {
         }
     }
 
-    static BufferedImage generateQRCodeImage(String text) {
-        QRCodeWriter qrCodeWriter = new QRCodeWriter();
-        int width = 300;
-        int height = 300;
-        BufferedImage image = null;
-        try {
-            Map<EncodeHintType, Object> hints = new HashMap<>();
-            hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
-            hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
-            BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height, hints);
-            image = MatrixToImageWriter.toBufferedImage(bitMatrix);
-        } catch (WriterException e) {
-            e.printStackTrace();
-        }
-        return image;
-    }
+
 
     public static void centerWindow(Window frame) {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
         int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
         frame.setLocation(x, y);
+    }
+
+
+    public static boolean userLogin(String username, String password) {
+        String sql = "SELECT COUNT(*) FROM users WHERE username = ? AND password = ?";
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+             PreparedStatement SQL = conn.prepareStatement(sql)) {
+            SQL.setString(1, username);
+            SQL.setString(2, password);
+            ResultSet rs = SQL.executeQuery();
+            rs.next();
+            int count = rs.getInt(1);
+            return count > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean adminLogin(String username, String password) {
+        return ADMIN_USERNAME.equals(username) && ADMIN_PASSWORD.equals(password);
     }
 }
