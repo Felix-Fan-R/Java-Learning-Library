@@ -27,7 +27,7 @@ public class UserManagement {
                 JOptionPane.showMessageDialog(null, "用户名已存在，请选择其他用户名！", "注册失败", JOptionPane.ERROR_MESSAGE);
                 return false;
             } else {
-                // 如果不存在相同的用户名，则插入新用户信息
+
                 SQLInsert.setString(1, username);
                 SQLInsert.setString(2, password);
                 int tmp = SQLInsert.executeUpdate();
@@ -40,49 +40,29 @@ public class UserManagement {
         }
     }
     static void forgotPassword() {
-        JTextField usernameField = new JTextField();
-        Object[] message = {"请输入您的用户名:", usernameField};
-        int option = JOptionPane.showConfirmDialog(null, message, "忘记密码", JOptionPane.OK_CANCEL_OPTION);
+        String username = JOptionPane.showInputDialog(null,"请输入您的用户名:\n","Title",JOptionPane.PLAIN_MESSAGE);
 
-        if (option == JOptionPane.OK_OPTION) {
-            String username = usernameField.getText();
+        if(username != null && !username.isEmpty()){
             String captcha = Captcha.ImageGUI();
-            if (captcha != null) {
+            if(captcha != null){
                 String TrueCaptcha = Captcha.getCaptcha();
-                if (captcha.equals(TrueCaptcha)) {
+                if(captcha.equals(TrueCaptcha)){
                     String password = getPassword(username);
                     if (password != null) {
-                        JOptionPane.showMessageDialog(null, "您的密码是：" + password, "密码找回成功", JOptionPane.INFORMATION_MESSAGE);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "未找到对应用户名的密码，请重试！", "密码找回失败", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showOptionDialog(null, "您的密码是：" + password, "密码找回成功", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, new String[]{"确定"}, null);
+                    }else{
+                        JOptionPane.showOptionDialog(null, "未找到对应用户名的密码，请重试！", "密码找回失败", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, new String[]{"确定"}, null);
                     }
-                } else {
-                    JOptionPane.showMessageDialog(null, "验证码错误，请重试！", "验证码错误", JOptionPane.ERROR_MESSAGE);
+                } else{
+                    JOptionPane.showOptionDialog(null, "验证码错误，请重试！", "验证码错误", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, new String[]{"确定"}, null);
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "操作已取消", "提示", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(null, "验证码不能为空，请重新输入！", "输入错误", JOptionPane.ERROR_MESSAGE);
             }
+        }else{
+            JOptionPane.showMessageDialog(null, "用户名不能为空，请重新输入！", "输入错误", JOptionPane.ERROR_MESSAGE);
         }
     }
-
-
-    /*static void forgotPassword() {
-        JTextField usernameField = new JTextField();
-        Object[] message = {"请输入您的用户名:", usernameField};
-        ImageIcon icon = new ImageIcon("img/1.jpeg");
-        int option = JOptionPane.showConfirmDialog(null, icon, "忘记密码", JOptionPane.OK_CANCEL_OPTION);
-        if (option == JOptionPane.OK_OPTION) {
-            String username = usernameField.getText();
-            String password = getPassword(username);
-            if (password != null) {
-                JOptionPane.showMessageDialog(null, "您的密码是：" + password, "密码找回成功", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "未找到对应用户名的密码，请重试！", "密码找回失败", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }
-*/
-
     static String getPassword(String username) {
         String sql = "SELECT password FROM users WHERE username = ?";
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);

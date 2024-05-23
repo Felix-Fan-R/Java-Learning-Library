@@ -28,15 +28,12 @@ public class Utility {
         }
     }
 
-
-
     public static void centerWindow(Window frame) {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
         int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
         frame.setLocation(x, y);
     }
-
 
     public static boolean userLogin(String username, String password) {
         String sql = "SELECT COUNT(*) FROM users WHERE username = ? AND password = ?";

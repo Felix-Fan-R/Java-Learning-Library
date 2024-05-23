@@ -1,9 +1,14 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import javax.swing.JFileChooser;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class AllGUI {
     static void showGUI() {
@@ -82,7 +87,7 @@ public class AllGUI {
 
             registerButton.addActionListener(e -> RegisterGUI());
             forgotPasswordButton.addActionListener(e -> UserManagement.forgotPassword());
-            aboutButton.addActionListener(AllGUI::actionPerformed);
+            aboutButton.addActionListener(e -> TeamMembers.showTeamMembersPage());
 
             panel.add(registerButton);
             panel.add(forgotPasswordButton);
@@ -147,8 +152,6 @@ public class AllGUI {
             if (UserManagement.registerUser(username, password)) {
                 JOptionPane.showMessageDialog(registerDialog, "注册成功！");
                 registerDialog.dispose();
-            } else {
-                JOptionPane.showMessageDialog(registerDialog, "注册失败，请重试！", "错误", JOptionPane.ERROR_MESSAGE);
             }
         });
 
@@ -214,7 +217,7 @@ public class AllGUI {
         JLabel nameLabel = new JLabel("垃圾名称:");
         JTextField nameText = new JTextField(20);
         JButton queryButton = new JButton("查询");
-        JButton promoteButton = new JButton("宣传垃圾分类信息");
+        JButton QRButton = new JButton("宣传垃圾分类信息");
         JButton logoutButton = new JButton("退出");
         JButton overviewButton = new JButton("总览");
         JButton searchByTypeButton = new JButton("按类型查找");
@@ -230,13 +233,13 @@ public class AllGUI {
         searchByTypeButton.setBounds(90, 80, 200, 30);
         searchByTypeButton.setFont(new Font("仿宋", Font.BOLD, 18));
         userFrame.setSize(400, 300);
-        promoteButton.setBounds(90, 130, 200, 25);
-        promoteButton.setFont(new Font("仿宋", Font.BOLD, 18));
+        QRButton.setBounds(90, 130, 200, 25);
+        QRButton.setFont(new Font("仿宋", Font.BOLD, 18));
         logoutButton.setBounds(190, 180, 80, 25);
 
         Utility.makeButton(searchByTypeButton);
         Utility.makeButton(queryButton);
-        Utility.makeButton(promoteButton);
+        Utility.makeButton(QRButton);
         Utility.makeButton(logoutButton);
         Utility.makeButton(overviewButton);
         nameLabel.setForeground(Color.WHITE);
@@ -270,7 +273,6 @@ public class AllGUI {
             searchByTypeDialog.setVisible(true);
         });
 
-
         queryButton.addActionListener(e -> {
             String searchText = nameText.getText();
             List<Garbage> garbageList = GarbageManagement.queryGarbageFuzzy(searchText);
@@ -284,36 +286,14 @@ public class AllGUI {
                 JOptionPane.showMessageDialog(null, "未找到与\"" + searchText + "\"相关的垃圾分类信息", "错误", JOptionPane.ERROR_MESSAGE);
             }
         });
-        promoteButton.addActionListener(e -> {
-        List<Garbage> garbageList = GarbageManagement.getAllGarbage();
-        if (!garbageList.isEmpty()) {
-            Random random = new Random();
-            Garbage randomGarbage = garbageList.get(random.nextInt(garbageList.size()));
-            String qrContent = "每日垃圾小知识：" + randomGarbage.getName() + "是"+randomGarbage.getType()+"哦";
-            BufferedImage qrImage = QRcodeimage.QRCodeImage(qrContent);
-            if (qrImage != null) {
-                JLabel qrLabel = new JLabel(new ImageIcon(qrImage));
-                JOptionPane.showMessageDialog(null, qrLabel, "宣传信息", JOptionPane.INFORMATION_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "数据库中没有垃圾信息", "错误", JOptionPane.ERROR_MESSAGE);
-        }
-        });
-//        promoteButton.addActionListener(e -> {
-//            Garbage garbage = GarbageManagement.queryGarbage(nameText.getText());
-//            if (garbage != null) {
-//                JOptionPane.showMessageDialog(null, "请把垃圾投放到：" + garbage.getType().name(), "宣传信息", JOptionPane.INFORMATION_MESSAGE);
-//            } else {
-//                JOptionPane.showMessageDialog(null, "未找到该垃圾分类信息", "错误", JOptionPane.ERROR_MESSAGE);
-//            }
-//        });
+        QRButton.addActionListener(e -> QRGUI());
 
         userFrame.add(panel);
         panel.setLayout(null);
         panel.add(nameLabel);
         panel.add(nameText);
         panel.add(queryButton);
-        panel.add(promoteButton);
+        panel.add(QRButton);
         panel.add(logoutButton);
         panel.add(overviewButton);
         panel.add(searchByTypeButton);
@@ -453,8 +433,54 @@ public class AllGUI {
         Utility.centerWindow(deleteDialog);
         deleteDialog.setVisible(true);
     }
+    static void QRGUI() {
+        List<Garbage> garbageList = GarbageManagement.getAllGarbage();
+        if (!garbageList.isEmpty()) {
+            Random random = new Random();
+            Garbage randomGarbage = garbageList.get(random.nextInt(garbageList.size()));
 
-    private static void actionPerformed(ActionEvent e) {
-        TeamMembers.showTeamMembersPage();
+            String qrContent = "每日垃圾小知识：" + randomGarbage.getName() + "是" + randomGarbage.getType() + "哦";
+            BufferedImage qrImage = QRcodeimage.QRCodeImage(qrContent);
+            if (qrImage != null) {
+
+                JOptionPane optionPane = new JOptionPane(new ImageIcon(qrImage), JOptionPane.PLAIN_MESSAGE, JOptionPane.OK_CANCEL_OPTION);
+                JDialog dialog = optionPane.createDialog("宣传信息");
+                dialog.setAlwaysOnTop(true);
+
+                JButton saveButton = new JButton("保存二维码");
+                saveButton.addActionListener(event -> {
+                    JFileChooser fileChooser = new JFileChooser();
+                    fileChooser.setFileFilter(new FileNameExtensionFilter("PNG Image", "png")); // 设置默认显示的文件类型为PNG图片
+
+                    fileChooser.addActionListener(e -> {
+                        if (e.getActionCommand().equals(JFileChooser.APPROVE_SELECTION)) {
+                            File selectedFile = fileChooser.getSelectedFile();
+                            if (!selectedFile.getName().endsWith(".png")) {
+                                selectedFile = new File(selectedFile.getParent(), selectedFile.getName() + ".png");
+                                fileChooser.setSelectedFile(selectedFile);
+                            }
+                        }
+                    });
+                    int returnValue = fileChooser.showSaveDialog(null);
+                    if (returnValue == JFileChooser.APPROVE_OPTION) {
+                        File selectedFile = fileChooser.getSelectedFile();
+                        try {
+                            ImageIO.write(qrImage, "png", selectedFile);
+                            JOptionPane.showMessageDialog(null, "二维码已保存到 " + selectedFile.getAbsolutePath(), "保存成功", JOptionPane.INFORMATION_MESSAGE);
+                        } catch (IOException ex) {
+                            JOptionPane.showMessageDialog(null, "保存二维码时出错: " + ex.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }
+                    dialog.dispose();
+                });
+                JPanel buttonPanel = new JPanel();
+                buttonPanel.add(saveButton);
+                Object[] options = {saveButton};
+                optionPane.setOptions(options);
+                dialog.setVisible(true);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "数据库中没有垃圾信息", "错误", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }

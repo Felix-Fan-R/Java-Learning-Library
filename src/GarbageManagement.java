@@ -56,6 +56,8 @@ class GarbageManagement {
             e.printStackTrace();
         }
         return garbageList;
+
+
     }
     static List<Garbage> queryGarbageFuzzy(String searchText) {
         List<Garbage> garbageList = new ArrayList<>();
@@ -74,23 +76,6 @@ class GarbageManagement {
         }
         return garbageList;
     }
-
-//    public static Garbage queryGarbage(String name) {
-//        String sql = "SELECT name, type FROM garbage WHERE name = ?";
-//        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
-//             PreparedStatement SQL = conn.prepareStatement(sql)) {
-//            SQL.setString(1, name);
-//            ResultSet rs = SQL.executeQuery();
-//            if (rs.next()) {
-//                String garbageName = rs.getString("name");
-//                String type = rs.getString("type");
-//                return new Garbage(garbageName, Garbage.GarbageType.valueOf(type));
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 
     static List<Garbage> getGarbageByType(String type) {
         List<Garbage> garbageList = new ArrayList<>();

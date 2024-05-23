@@ -9,22 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f419da3-96c7-406c-84a4-380065160407" name="更改" comment="24.05.18">
-      <change afterPath="$PROJECT_DIR$/src/QRcodeimage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="2f419da3-96c7-406c-84a4-380065160407" name="更改" comment="24.05.23">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/19f4e461-41cc-4f65-8355-c081b8db2ca0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/19f4e461-41cc-4f65-8355-c081b8db2ca0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AllGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AllGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Captcha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Captcha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GarbageManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GarbageManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,6 +32,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -91,7 +89,7 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "vue.rearranger.settings.migration": "true",
     "应用程序.AllWord.executor": "Run",
     "应用程序.GUI.executor": "Run",
@@ -100,6 +98,7 @@
     "应用程序.ListAllFonts.executor": "Run",
     "应用程序.Main.executor": "Run",
     "应用程序.Team6GUI.executor": "Run",
+    "应用程序.TeamMembers.executor": "Run",
     "应用程序.TeamMembersPage.executor": "Run",
     "应用程序.Test.executor": "Run",
     "应用程序.guessgui.executor": "Run"
@@ -177,6 +176,7 @@
       <workItem from="1716204509409" duration="5090000" />
       <workItem from="1716277814413" duration="2297000" />
       <workItem from="1716426856951" duration="3565000" />
+      <workItem from="1716451953223" duration="11109000" />
     </task>
     <task id="LOCAL-00001" summary="24.04.22">
       <option name="closed" value="true" />
@@ -242,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716209060486</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="24.05.23">
+      <option name="closed" value="true" />
+      <created>1716436227697</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716436227697</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +286,8 @@
     <MESSAGE value="24.05.08" />
     <MESSAGE value="24.05.14" />
     <MESSAGE value="24.05.18" />
-    <option name="LAST_COMMIT_MESSAGE" value="24.05.18" />
+    <MESSAGE value="24.05.23" />
+    <option name="LAST_COMMIT_MESSAGE" value="24.05.23" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
